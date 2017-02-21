@@ -32,10 +32,10 @@ if (isNode) {
   var io = require('socket.io-client'),
       vm = require('vm');
   global.SwankJS = SwankJS;
-  global.Completion = require('../Completion').Completion;
+  global.Completion = require('../completion').Completion;
   global.swank_printStackTrace = require('./stacktrace').swank_printStackTrace;
   window = global;
-  window.navigator = {userAgent: "nodejs-swank-client"};
+  window.navigator = {userAgent: "nodejs/external"};
   window.eval = function(code) {
     return vm.runInThisContext(code, 'SwankJS node client');
   }

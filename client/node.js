@@ -2,9 +2,13 @@ var SwankJS = require('./swank-js'),
     SWANKJS_HOST = process.env.SWANKJS_HOST || "localhost",
     SWANKJS_PORT = process.env.SWANKJS_PORT || 8009;
 
-SwankJS.setupNodeJSClient = function(host, port) {
-  var serverURL = 'http://' + (host || SWANKJS_HOST) + ':' + (port || SWANKJS_PORT);
-  this.setup(serverURL);
+SwankJS.setupNodeJSClient = function(opts) {
+  console.log("SETUP CLIENT",opts)
+  var serverURL = 'http://' + (opts.host || SWANKJS_HOST) + ':' + (opts.port || SWANKJS_PORT);
+  
+  if (opts.name) { global.navigator = {userAgent: "nodejs/" + opts.name}; }
+
+  this.setup(serverURL, opts.name);
 }
 
 // making these objects available through eval for development purposes

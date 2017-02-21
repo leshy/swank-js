@@ -51,5 +51,5 @@ exports.recognize = function recognize (name) {
     if (r != name)
       return r.replace(/chromeframe/, "ChromeFrame").replace(/_/g, ".");
   }
-  return "unknown";
+  return name;
 };
