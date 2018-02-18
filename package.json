@@ -2,7 +2,12 @@
   "name": "swank-js",
   "version": "0.0.5",
   "description": "Swank backend for Node.JS and in-browser JavaScript.",
-  "keywords": [ "swank", "slime", "emacs", "repl" ],
+  "keywords": [
+    "swank",
+    "slime",
+    "emacs",
+    "repl"
+  ],
   "author": "Ivan Shvedunov",
   "contributors": [
     "Robert Krahn",
@@ -23,15 +28,26 @@
     "swank-js": "./swank.js"
   },
   "dependencies": {
+    "app-module-path": "^2.2.0",
+    "clear-module": "^2.1.0",
+    "clear-require": "^2.0.0",
+    "decache": "^4.1.0",
+    "immutable": "^3.8.1",
+    "import-cwd": "^2.1.0",
+    "import-fresh": "^2.0.0",
+    "import-from": "^2.1.0",
+    "livescript": "^1.5.0",
     "socket.io": ">=0.9",
     "socket.io-client": ">=0.9"
   },
   "scripts": {
     "swank": "node ./swank.js",
-		"test": "./tests.js"
+    "test": "./tests.js"
   },
-  "licenses": [{
-    "type" : "X11-style",
-    "url" : "https://raw.github.com/swank-js/swank-js/master/LICENSE"
-  }]
+  "licenses": [
+    {
+      "type": "X11-style",
+      "url": "https://raw.github.com/swank-js/swank-js/master/LICENSE"
+    }
+  ]
 }

@@ -15,7 +15,7 @@ function load(url, requirement) {
   }
   var script = document.createElement('script');
   script.setAttribute('type', 'text/javascript');
-  script.setAttribute('src', swank_server + url);
+  script.setAttribute('src', window.swank_server + url);
   document.head = document.head || document.getElementsByTagName('head')[0];
   document.head.appendChild(script);
 }

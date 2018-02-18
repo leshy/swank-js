@@ -215,7 +215,7 @@ SwankJS.setup = function setup (url) {
   // web app itself.
   // Don't forget about 'Host: ' header though!
   this.lastMessageTime = new Date().getTime();
-  this.completion = new Completion();
+  this.completion = new window.Completion();
   this.setupSocket(url);
 };
 
@@ -333,9 +333,10 @@ SwankJS.disconnect = function disconnect () {
 };
 
 if (isNode) {
-    module.exports = SwankJS;
+  module.exports = SwankJS;
+} else {
+  window.SwankJS = SwankJS;
 }
-
 /*
 // we may need this later
 
